@@ -191,6 +191,14 @@ body {
   margin-right: 6px;
 }
 
+ion-icon[name="heart"]{
+  color:red;
+}
+
+ion-icon[name="bookmark"]{
+  color:yellow;
+}
+
 .post .fundo .curtidas {
   display: flex;
   align-items: center;
