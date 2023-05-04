@@ -1,6 +1,6 @@
 export default function Suggestion(props) {
     return (
-        <div class="sugestao">
+        <div class="sugestao" >
             <div class="usuario">
                 <img src={props.src} alt={props.alt} />
                 <div class="texto">
