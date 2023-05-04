@@ -35,7 +35,7 @@ export default function Post(props) {
         }
     }
     return (
-        <div class="post">
+        <div class="post" data-test="post">
             <div class="topo">
                 <div class="usuario">
                     <img src={props.userImg} alt={props.userAlt} />
@@ -47,7 +47,7 @@ export default function Post(props) {
             </div>
 
             <div class="conteudo" anim={animation}>
-                <img src={props.postImg} alt={props.postAlt} onClick={handleClickImage} />
+                <img src={props.postImg} alt={props.postAlt} onClick={handleClickImage} data-test="post-image"/>
                 <div class="instagram-heart">
                 </div>
             </div>
@@ -55,19 +55,19 @@ export default function Post(props) {
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon name={like} onClick={handleClickLike}></ion-icon>
+                        <ion-icon name={like} onClick={handleClickLike} data-test="like-post"></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name={save} onClick={handleClickSave}></ion-icon>
+                        <ion-icon name={save} onClick={handleClickSave} data-test="save-post"></ion-icon>
                     </div>
                 </div>
 
                 <div class="curtidas">
                     <img src={props.likeImg} alt={props.likeAlt} />
                     <div class="texto">
-                        Curtido por <strong>{props.likeAlt}</strong> e <strong>outras {likes} pessoas</strong>
+                        Curtido por <strong>{props.likeAlt}</strong> e <strong data-test="like-number">outras {likes} pessoas</strong>
                     </div>
                 </div>
             </div>
