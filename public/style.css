@@ -178,6 +178,7 @@ body {
 
 .post .conteudo img {
   width: 100%;
+  z-index: 0;
 }
 
 .post .fundo .acoes {
@@ -312,4 +313,38 @@ ion-icon {
   padding-top: 5px;
   color: black;
 }
+/*novo*/
 
+.conteudo {
+  background-color: transparent;
+  position: relative;
+}
+
+.instagram-heart {   
+  width: 184px;
+  height: 162px;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: url("https://imgur.com/rksyGE8.png") no-repeat center/contain;
+  opacity: 1;
+  transform: scale(0);
+}
+
+.conteudo[anim="true"] .instagram-heart {
+  animation-duration: 800ms;
+  animation-name: like-heart-animation;
+  animation-timing-function: ease-in;
+}
+
+@keyframes like-heart-animation{ 
+  0% { opacity:0; transform:scale(0.2); }
+  18% { opacity:.9; transform:scale(1.2); }
+  28% { transform:scale(.95); }
+  38% { opacity:.9; transform:scale(1); }
+  100% { transform:scale(1); }
+}

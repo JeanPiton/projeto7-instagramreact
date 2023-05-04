@@ -1,34 +1,37 @@
 import { useState } from "react";
 export default function Post(props) {
-    const [save,setSave] = useState("bookmark-outline");
-    const [like,setLike] = useState("heart-outline");
-    const [likes,setLikes] = useState(Number(props.likeCount));
-    function handleClickSave(){
-        save==="bookmark"?setSave("bookmark-outline"):setSave("bookmark");
+    const [animation, setAnimation] = useState("false");
+    const [save, setSave] = useState("bookmark-outline");
+    const [like, setLike] = useState("heart-outline");
+    const [likes, setLikes] = useState(Number(props.likeCount));
+    function handleClickSave() {
+        save === "bookmark" ? setSave("bookmark-outline") : setSave("bookmark");
     }
-    function handleClickLike(){
-        let x=likes.toString();
-        x=x.replace(".","");
+    function handleClickLike() {
+        let x = likes.toString();
+        x = x.replace(".", "");
         let count = x;
-        if(like === "heart"){
+        if (like === "heart") {
             count--;
             setLike("heart-outline");
-        }else{
+            setAnimation("false");
+        } else {
             count++;
             setLike("heart");
         }
         count = count.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
         setLikes(count);
     }
-    function handleClickImage(event){
-        if(like === "heart-outline" && event.detail===2){
-            let x=likes.toString();
-            x=x.replace(".","");
+    function handleClickImage(event) {
+        if (like === "heart-outline" && event.detail === 2) {
+            let x = likes.toString();
+            x = x.replace(".", "");
             let count = x;
             count++;
             setLike("heart");
             count = count.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
             setLikes(count);
+            setAnimation("true");
         }
     }
     return (
@@ -43,8 +46,10 @@ export default function Post(props) {
                 </div>
             </div>
 
-            <div class="conteudo">
+            <div class="conteudo" anim={animation}>
                 <img src={props.postImg} alt={props.postAlt} onClick={handleClickImage} />
+                <div class="instagram-heart">
+                </div>
             </div>
 
             <div class="fundo">
