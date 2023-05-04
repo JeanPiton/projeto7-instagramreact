@@ -1,78 +1,25 @@
+import Story from "./Story";
 export default function Stories() {
+    const itens = [
+        {src:"assets/img/9gag.svg",alt:"9gag",user:"9gag"}
+        ,
+        {src:"assets/img/meowed.svg",alt:"meowed",user:"meowed"}
+        ,
+        {src:"assets/img/barked.svg",alt:"barked",user:"barked"}
+        ,
+        {src:"assets/img/nathanwpylestrangeplanet.svg",alt:"nathanwpylestrangeplanet",user:"nathanwpylestrangeplanet"}
+        ,
+        {src:"assets/img/wawawicomics.svg",alt:"wawawicomics",user:"wawawicomics"}
+        ,
+        {src:"assets/img/respondeai.svg",alt:"respondeai",user:"respondeai"}
+        ,
+        {src:"assets/img/filomoderna.svg",alt:"filomoderna",user:"filomoderna"}
+        ,
+        {src:"assets/img/memeriagourmet.svg",alt:"memeriagourmet",user:"memeriagourmet"}
+    ]
     return (
         <div class="stories">
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/9gag.svg" alt="9gag" />
-                </div>
-                <div class="usuario">
-                    9gag
-                </div>
-            </div>
-
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/meowed.svg" alt="meowed" />
-                </div>
-                <div class="usuario">
-                    meowed
-                </div>
-            </div>
-
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/barked.svg" alt="barked" />
-                </div>
-                <div class="usuario">
-                    barked
-                </div>
-            </div>
-
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/nathanwpylestrangeplanet.svg" alt="nathanwpylestrangeplanet" />
-                </div>
-                <div class="usuario">
-                    nathanwpylestrangeplanet
-                </div>
-            </div>
-
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/wawawicomics.svg" alt="wawawicomics" />
-                </div>
-                <div class="usuario">
-                    wawawicomics
-                </div>
-            </div>
-
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/respondeai.svg" alt="respondeai" />
-                </div>
-                <div class="usuario">
-                    respondeai
-                </div>
-            </div>
-
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/filomoderna.svg" alt="filomoderna" />
-                </div>
-                <div class="usuario">
-                    filomoderna
-                </div>
-            </div>
-
-            <div class="story">
-                <div class="imagem">
-                    <img src="assets/img/memeriagourmet.svg" alt="memeriagourmet" />
-                </div>
-                <div class="usuario">
-                    memeriagourmet
-                </div>
-            </div>
-
+            {itens.map(item => <Story src={item.src} alt={item.alt} user={item.user} />)}
             <div class="setinha">
                 <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
